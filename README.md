@@ -22,34 +22,119 @@ Testing the webserver.
 
 ## PROGRAM:
 ```
-from http.server import HTTPServer,BaseHTTPRequestHandler
-
-content='''
-<!doctype html>
+from http.server import HTTPServer, BaseHTTPRequestHandler
+content = """
+<!DOCTYPE html>
 <html>
-<head>
-<title> My Web Server</title>
-</head>
-<body>
-<h1>Welcome</h1>
-</body>
+    <head>
+        <title>COMPANY REVENUE</title>
+    </head>
+    <body>
+        <center><h1>REVENUE</h1></center>
+        <table bgcolor="red"
+        border="20" 
+        align="center">
+            <tr
+            bgcolor="white"
+            cellspace="10">
+                 <TH>RANK</TH>
+                <th>NAME OF COMPANY</th>
+                <TH>YEAR</TH>
+                <TH>REVENUE</TH>
+                <TH>HEADQUATERS</TH>
+            </tr>
+            <TR  bgcolor="white"
+            cellspace="10">
+                 <TD>1</TD>
+                <TD> MICROSOFT</TD>
+                <TD>2014</TD>
+                <TD>$86.5M</TD>
+                <TD>USA</TD>
+            </TR>
+            <TR bgcolor="white"
+            cellspace="10">
+                 <TD>2</TD>
+                <TD> ORACLE</TD>
+                <TD>2014</TD>
+                <TD>$37.5M</TD>
+                <TD>USA</TD>
+            </TR>
+            <TR bgcolor="white"
+            cellspace="10">
+                <TD>3</TD>
+                <TD> SAP</TD>
+                <TD>2014</TD>
+                <TD>$20.9M</TD>
+                <TD>GERMANY</TD>
+            </TR>
+            <TR bgcolor="white"
+            cellspace="10">
+                <TD>4</TD>
+                <TD>SYMSNTEC</TD>
+                <TD>2014</TD>
+                <TD>$6.5M</TD>
+                <TD>USA</TD>
+            </TR>
+            <TR bgcolor="white"
+            cellspace="10">
+                <TD>5</TD>
+                <TD>VMWARE</TD>
+                <TD>2014</TD>
+                <TD>$5.2M</TD>
+                <TD>USA</TD>
+            </TR>
+            <TR bgcolor="WHITE"
+            cellspace="10" >
+                <TD>6</TD>
+                <TD>CA TECHNOLOGIES</TD>
+                <TD>2014</TD>
+                <TD>$4.5M</TD>
+                <TD>USA</TD>
+            </TR>
+            <TR bgcolor="white"
+            cellspace="10">
+                <TD>7</TD>
+                <TD>ADOBE SYSTEMS</TD>
+                <TD>2014</TD>
+                <TD>$4.4M</TD>
+                <TD>USA</TD>
+            </TR>
+            <TR bgcolor="white"
+            cellspace="10">
+                <TD>8</TD>
+                <TD>FISERV</TD>
+                <TD>2014</TD>
+                <TD>$4.3M</TD>
+                <TD>USA</TD>
+            </TR>
+            <TR bgcolor="white"
+            cellspace="10">
+                <TD>9</TD>
+                <TD>INTUIT</TD>
+                <TD>2014</TD>
+                <TD>$3.3M</TD>
+                <TD>USA</TD>
+            </TR>
+            </TR>
+        </table>
+    </body>
 </html>
-'''
+"""
 
-class MyServer(BaseHTTPRequestHandler):
+class myhandler(BaseHTTPRequestHandler):
     def do_GET(self):
-        print("Get request received...")
-        self.send_response(200) 
-        self.send_header("content-type", "text/html")       
+        print("request received")
+        self.send_response(200)
+        self.send_header('content-type', 'text/html; charset=utf-8')
         self.end_headers()
         self.wfile.write(content.encode())
-
-print("This is my webserver") 
-server_address =('',8000)
-httpd = HTTPServer(server_address,MyServer)
+server_address = ('',80)
+httpd = HTTPServer(server_address,myhandler)
+print("my webserver is running...")
 httpd.serve_forever()
 ```
 ## OUTPUT:
+![Screenshot 2024-03-20 211644](https://github.com/dr-pvijayan/simplewebserver/assets/149148235/a075e1b6-cee1-4af1-9c47-e0dd93c430cd)
 
 
 ## RESULT:
