@@ -137,7 +137,7 @@ httpd.serve_forever()
 ![Screenshot 2024-03-20 211644](https://github.com/sakamalesh/simplewebserver/assets/149148235/1fdc4219-c087-4413-89a4-12713881d3fb)
 
 ![Screenshot 2024-03-20 212543](https://github.com/sakamalesh/simplewebserver/assets/149148235/2f8a945d-42fb-4c59-b10c-c50d390c872f)
-![Screenshot 2024-03-20 211644](https://github.com/sakamalesh/simplewebserver/assets/149148235/111aef44-a853-4fb0-8b01-b2ce44a900dc)
+
 
 
 ## RESULT:
